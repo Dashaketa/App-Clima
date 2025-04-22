@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima Actual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        #weather-container {
+            margin-top: 30px;
+            padding: 25px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            background-color: #f5f9ff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        #city-input {
+            padding: 10px 15px;
+            width: 250px;
+            border: 2px solid #4CAF50;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #3e8e41;
+        }
+        .weather-icon {
+            width: 120px;
+            height: 120px;
+            margin: 15px 0;
+        }
+        .error {
+            color: #d32f2f;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .weather-info {
+            font-size: 18px;
+            margin: 8px 0;
+        }
+        .temp {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Consulta del Clima Actual</h1>
+    
+    <div>
+        <input type="text" id="city-input" placeholder="Ej: Madrid,ES o New York,US">
+        <button id="search-btn">Buscar Clima</button>
+    </div>
+    
+    <div id="weather-container" style="display: none;">
+        <h2 id="city-name"></h2>
+        <img id="weather-icon" class="weather-icon" src="" alt="Icono del clima">
+        <div class="temp" id="temperature"></div>
+        <div class="weather-info" id="weather-description"></div>
+        <div class="weather-info">Humedad: <span id="humidity"></span>%</div>
+        <div class="weather-info">Viento: <span id="wind-speed"></span> km/h</div>
+        <div class="weather-info">Presión: <span id="pressure"></span> hPa</div>
+    </div>
+    
+    <p id="error-message" class="error"></p>
+    
+    <script src="app.js"></script>
+</body>
+</html>
